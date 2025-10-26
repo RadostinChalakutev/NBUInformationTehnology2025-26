@@ -5,8 +5,20 @@
 
 #include <iostream>
 using namespace std;
-    for(int i=1;i<=t;i++){
+
+bool isMultiple(long n, long t) {
+  return (n % t) == 0;
+
+
+
 
 }
-
+int main() {
+    long n,t;
+    cin>>n>>t;
+    if (isMultiple(n,t)) {
+        cout<<"YES"<<endl;
+    }else {
+        cout<<"NO"<<endl;
+    }
 }
