@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Обратна връзка – FitLife</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Лого" class="logo-img">
+      <span class="site-title">FitLife Bulgaria</span>
+    </a>
+    <nav class="site-nav">
+      <button class="nav-toggle">☰</button>
+      <ul class="nav-list">
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="about.html">За нас</a></li>
+        <li><a href="workouts/index.html">Тренировки</a></li>
+        <li><a href="feedback.html">Обратна връзка</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container content">
+  <h2>📝 Споделете вашето мнение</h2>
+  <p>Пишете ни своите идеи, препоръки или въпроси – ние ще ги прочетем с удоволствие!</p>
+
+  <form action="https://formspree.io/f/movooaov" method="POST">
+    <label>Вашето име:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Имейл за обратна връзка:</label><br>
+    <input type="email" name="email"><br><br>
+
+    <label>Вашето съобщение:</label><br>
+    <textarea name="message" rows="6" required></textarea><br><br>
+
+    <button type="submit" class="btn">Изпрати</button>
+  </form>
+
+
+  <p id="confirmation" style="margin-top: 1rem; color: green;"></p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 FitLife Bulgaria. Всички права запазени.</p>
+  </div>
+</footer>
+
+<script src="js/scripts.js"></script>
+<script>
+  // Симулиране на изпращане
+  document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const message = document.getElementById('message').value;
+    if (message.trim().length > 0) {
+      document.getElementById('confirmation').textContent = "✅ Благодарим за вашето съобщение!";
+      document.getElementById('message').value = "";
+    } else {
+      document.getElementById('confirmation').textContent = "⚠️ Моля, въведете текст.";
+    }
+  });
+</script>
+</body>
+</html>
