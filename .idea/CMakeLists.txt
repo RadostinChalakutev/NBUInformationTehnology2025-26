@@ -8,5 +8,5 @@ add_executable(_idea
         modules.xml
         NBUInformationTehnology2025-26.cpp.iml
         vcs.xml
-        "../Data Structures/Упражнения/P03/2/2.1.cpp"
-        "../Data Structures/Упражнения/P03/2/2.2.cpp")
+        "../Data Structures/Упражнения/P03/2/P202.cpp"
+

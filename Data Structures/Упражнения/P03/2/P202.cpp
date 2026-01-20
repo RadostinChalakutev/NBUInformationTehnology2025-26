@@ -27,23 +27,39 @@ int main() {
     }
     stack<int>evenNumbers;
     stack<int>oddNumbers;
+    stack<int>evenHelper;
 
     while (!mainStack.empty()) {
       int x = mainStack.top();
         mainStack.pop();
         if (x%2==0) {
-            evenNumbers.push(x);
+            evenHelper.push(x);
         }else {
             oddNumbers.push(x);
         }
     }
-    cout<<"Even generated numbers are: ";
-    stack<int>temp=evenNumbers;
-    while (temp.empty()) {
-        cout<<temp.top()<<" ";
-        temp.pop();
+    while (!evenHelper.empty()) {
+        evenNumbers.push(evenHelper.top());
+        evenHelper.pop();
     }
 
+    cout<<"Stack with even numbers: ";
+    {
+        stack<int>temp=evenNumbers;
+        while (!temp.empty()) {
+            cout<<temp.top()<<" ";
+            temp.pop();
 
-
+        }
+        cout<<endl;
+    }
+    cout<<"Stack with odd numbers:";
+    {
+        stack<int>temp=oddNumbers;
+        while (!temp.empty()) {
+            cout<<temp.top()<<" ";
+            temp.pop();
+        }
+    }
+    return 0;
 }
