@@ -63,6 +63,6 @@ public:
             head->prev=NULL;
         }
         delete old;
-        sz--
+        sz--;
     }
 };
