@@ -65,4 +65,59 @@ public:
         delete old;
         sz--;
     }
+    void eraseBack() {
+        if (empty()) {
+            throw std::out_of_range("Deque is empty");
+        }
+        Node* old=tail;
+        if (head==tail){
+            head=tail=NULL;
+
+        }else {
+            tail=tail->prev;
+            tail->next=NULL;
+
+        }
+        delete old;
+        sz--;
+    }
+    T& front() {
+        if (empty()) {
+            throw std::out_of_range("Deque is empty");
+
+        }
+        return head->data;
+
+    }
+    T& back() {
+        if (empty()) {
+            throw std::out_of_range("Deque is empty");
+
+        }
+        return tail->data;
+    }
+    void clear() {
+        while (!empty()) {
+            eraseFront();
+        }
+
+    }
+
 };
+int main() {
+    Deque<int> dq;
+
+    cout<<"Is deque empty?"<<(dq.empty()? "Yes" : "No")<<endl;
+    dq.insertFront(10);
+    dq.insertBack(10);
+    dq.insertFront(20);
+    dq.insertBack(20);
+    dq.insertFront(4);
+
+    cout<<"Number of elements: "<<dq.size()<<endl;
+    cout<<"First element: "<<dq.front()<<endl;
+    cout<<"Last element: "<<dq.back()<<endl;
+
+
+
+}
