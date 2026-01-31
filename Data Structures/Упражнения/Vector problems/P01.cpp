@@ -19,7 +19,7 @@ private:
         delete[] data;
         data = new_data;
     }
-    public:
+public:
     Vector(int cap=10) {
         capacity = cap;
         size = 0;
@@ -34,7 +34,7 @@ private:
         if (size == capacity) {
             resize();
         }
-        data[size] = value;
+        data[size++] = value;
     }
     T get(int index)const {
         return data[index];
@@ -66,7 +66,7 @@ int main() {
     double sum=0;
     int count=0;
 
-    for (int i = 0; i < K; i++) {
+    for (int i = K-1; i <=L-1; i++) {
         sum+=v.get(i);
         count++;
 
@@ -75,5 +75,4 @@ int main() {
     cout<<"Average: "<<average<<endl;
 
     return 0;
-
 }
